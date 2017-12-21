@@ -1,7 +1,7 @@
 //
 //  APIConfig.h
 //  Test-inke
-//
+//  接口配置文件
 //  Created by 唐嗣成 on 2017/11/11.
 //  Copyright © 2017年 shawnTang. All rights reserved.
 //
