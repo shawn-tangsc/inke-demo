@@ -1,7 +1,7 @@
 //
 //  TSCHttpTool.h
 //  Test-inke
-//
+//  调用接口的类
 //  Created by 唐嗣成 on 2017/11/11.
 //  Copyright © 2017年 shawnTang. All rights reserved.
 //
