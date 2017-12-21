@@ -33,7 +33,7 @@ pod install
 配置和导入ijkplayer
 ------------------------------------
 
-播放直播视频和普通视频是稍微有点不同的，ios自带的视频播放是无法播放直播地址的视频，所以要导入bilibili的[ijkplayer](https://github.com/Bilibili/ijkplayer)，由于framework 太大了，所以我就不上传了，可以按照下面路径学习一下，或者到我指定的百度云盘去下载（密码）。
+播放直播视频和普通视频是稍微有点不同的，ios自带的视频播放是无法播放直播地址的视频，所以要导入bilibili的[ijkplayer](https://github.com/Bilibili/ijkplayer)，由于framework 太大了，所以我就不上传了，可以按照下面路径学习一下，或者到我指定的[百度云盘](https://pan.baidu.com/s/1pLzb8uf)去下载（密码:q1us）。
 
 + 从github上面下载控件
 
