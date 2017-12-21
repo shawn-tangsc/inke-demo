@@ -1,0 +1,30 @@
+//
+//  yingke.pch
+//  Test-inke
+//
+//  Created by 唐嗣成 on 2017/10/21.
+//  Copyright © 2017年 shawnTang. All rights reserved.
+//
+/*
+     build-settings--->perfix header---->
+     $(SRCROOT)/Class/Other/yingke.pch
+     这样就可以让整个工程都可以引用到这个pch文件里面引用到的东西
+ */
+
+
+#ifndef yingke_pch
+#define yingke_pch
+#import "Masonry.h"//autolayout 布局控件
+#import "MJRefresh.h"//下拉刷新
+#import "TSCMacros.h"//宏命令
+#import "YYKit.h"
+#import "APIConfig.h"
+#import "MJExtension.h"//可以将下划线命名转换成驼峰命名，json转model
+#import "UIImageView+SDWebImage.h"
+#import "TSCCommonUtils.h" //公共方法类
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* yingke_pch */
