@@ -30,7 +30,7 @@ pod 初始化
 pod install
 ```
 
-配置和导入ijkplayer
+配置和导入ijkplayer（直播引流）
 ------------------------------------
 
 播放直播视频和普通视频是稍微有点不同的，ios自带的视频播放是无法播放直播地址的视频，所以要导入bilibili的[ijkplayer](https://github.com/Bilibili/ijkplayer)，由于framework 太大了，所以我就不上传了，可以按照下面路径学习一下，或者到我指定的[百度云盘](https://pan.baidu.com/s/1pLzb8uf)去下载（密码:q1us）。
@@ -74,6 +74,9 @@ cd ios
 
 + 将此frameword放到inke-demo文件夹下，或者自行到inke-demo的项目中去改IJKMediaPlayerFrameworkWithSSL.framework的路径
 
+直播推流
+------------------------------------
+这里使用的是[LFLiveKit](https://github.com/LaiFengiOS/LFLiveKit),但是因为没有合适和直播推流的测试服务器地址，而且抓包映客的直播服务器可以连接，但是不能播放，所以该功能先只做到这里，待以后继续开发。
 
 执行
 ------------------------------------
