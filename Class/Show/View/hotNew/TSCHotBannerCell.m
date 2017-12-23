@@ -9,6 +9,7 @@
 #import "TSCHotBannerCell.h"
 #import "TSCBannerImageCell.h"
 #import "TSCTicker.h"
+#import "TSCTabBarViewController.h"
 #define YYMaxSections 100
 static NSString *bannerCellId = @"TSCBannerImageCell";
 
@@ -157,6 +158,24 @@ static NSString *bannerCellId = @"TSCBannerImageCell";
 //    NSLog(@"self");
 //}
 
-
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIWindow *keyWindow  = [UIApplication sharedApplication].keyWindow;
+    UIViewController *vc = keyWindow.rootViewController;
+    TSCTabBarViewController * tabbarVC = nil;
+    
+    if ([vc isKindOfClass:[TSCTabBarViewController class]])
+    {
+        tabbarVC = (TSCTabBarViewController *)vc;
+    }
+    
+    TSCTabBar* tabbar = tabbarVC.tscTabbar;
+    UIButton* btn = tabbar.camearButton;
+    UIView *result = [super hitTest:point withEvent:event];
+    CGPoint buttonPoint = [btn convertPoint:point fromView:self];
+    if ([btn pointInside:buttonPoint withEvent:event]) {
+        return btn;
+    }
+    return result;
+}
 
 @end
