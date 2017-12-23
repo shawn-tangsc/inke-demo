@@ -7,7 +7,7 @@
 //
 
 #import "TSCLaunchViewController.h"
-
+#import "LFLivePreview.h"
 @interface TSCLaunchViewController ()
 
 @end
@@ -17,6 +17,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+- (IBAction)startLive:(id)sender {
+    
+//    UIView *backview = [[UIView alloc] initWithFrame:self.view.bounds];
+//    backview.backgroundColor = [UIColor blackColor];
+//    [self.view addSubview:backview];
+    
+    LFLivePreview * preview = [[LFLivePreview alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:preview];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

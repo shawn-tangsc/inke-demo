@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_zbfx" translatesAutoresizingMaskIntoConstraints="NO" id="pXP-AC-v1V">
-                    <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uaf-g3-3Kg">
                     <rect key="frame" x="311" y="64" width="64" height="64"/>
@@ -29,22 +29,53 @@
                         <action selector="closeLaunch:" destination="-1" eventType="touchUpInside" id="cNk-Ot-kv1"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DpL-qW-KlT">
+                    <rect key="frame" x="5" y="83" width="72" height="26"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" title="上海市" image="launch_map_on">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbr-ya-te5">
+                    <rect key="frame" x="62.666666666666657" y="384" width="249.99999999999997" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="开始直播" backgroundImage="room_button">
+                        <color key="titleColor" red="0.0017871429449999999" green="0.84962344170000004" blue="0.7903378606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="startLive:" destination="-1" eventType="touchUpInside" id="0g8-dT-2Hr"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="给直播写个标题" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TNH-NM-ibi">
+                    <rect key="frame" x="114.66666666666667" y="330" width="146.66666666666663" height="24"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="zbr-ya-te5" firstAttribute="centerX" secondItem="TNH-NM-ibi" secondAttribute="centerX" id="5SQ-Sv-aMT"/>
+                <constraint firstItem="zbr-ya-te5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="AAs-Eq-tIF"/>
+                <constraint firstItem="zbr-ya-te5" firstAttribute="top" secondItem="TNH-NM-ibi" secondAttribute="bottom" constant="30" id="NAs-RA-CHk"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="Uaf-g3-3Kg" secondAttribute="trailing" id="P6s-5B-TJB"/>
+                <constraint firstItem="Uaf-g3-3Kg" firstAttribute="centerY" secondItem="DpL-qW-KlT" secondAttribute="centerY" id="RFM-Sk-aeO"/>
                 <constraint firstItem="Uaf-g3-3Kg" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="VQB-OD-JAz"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="pXP-AC-v1V" secondAttribute="bottom" id="c6G-R9-dvb"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="pXP-AC-v1V" secondAttribute="bottom" constant="-34" id="c6G-R9-dvb"/>
+                <constraint firstItem="zbr-ya-te5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gAZ-Fy-wIa"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="pXP-AC-v1V" secondAttribute="trailing" id="lyK-tx-Z41"/>
-                <constraint firstItem="pXP-AC-v1V" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="qzZ-Nc-KZT"/>
+                <constraint firstItem="DpL-qW-KlT" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="5" id="mMa-i3-X1w"/>
+                <constraint firstItem="pXP-AC-v1V" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="-44" id="qzZ-Nc-KZT"/>
                 <constraint firstItem="pXP-AC-v1V" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="tSh-GQ-UFt"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="34.5" y="53.5"/>
+            <point key="canvasLocation" x="34.5" y="53"/>
         </view>
     </objects>
     <resources>
         <image name="bg_zbfx" width="250" height="444"/>
         <image name="launch_close" width="64" height="64"/>
+        <image name="launch_map_on" width="26" height="26"/>
+        <image name="room_button" width="250" height="44"/>
     </resources>
 </document>

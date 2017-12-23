@@ -24,6 +24,7 @@
 		104405E01FD921B70075243C /* TSCCommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 104405DF1FD921B70075243C /* TSCCommonUtils.m */; };
 		104F22381FCDAB59005BC4BD /* TSCLiveChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 104F22361FCDAB59005BC4BD /* TSCLiveChatViewController.m */; };
 		104F22391FCDAB59005BC4BD /* TSCLiveChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104F22371FCDAB59005BC4BD /* TSCLiveChatViewController.xib */; };
+		105336901FEE7581000D02F2 /* LFLivePreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 1053368E1FEE7580000D02F2 /* LFLivePreview.m */; };
 		106B6F161FD26F82006A1E66 /* TSCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 106B6F151FD26F82006A1E66 /* TSCLocationManager.m */; };
 		106B6F181FD27240006A1E66 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 106B6F171FD27235006A1E66 /* CoreLocation.framework */; };
 		106B6F1E1FD2AE52006A1E66 /* TSCFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 106B6F1D1FD2AE52006A1E66 /* TSCFlow.m */; };
@@ -141,6 +142,8 @@
 		104F22351FCDAB59005BC4BD /* TSCLiveChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCLiveChatViewController.h; sourceTree = "<group>"; };
 		104F22361FCDAB59005BC4BD /* TSCLiveChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCLiveChatViewController.m; sourceTree = "<group>"; };
 		104F22371FCDAB59005BC4BD /* TSCLiveChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TSCLiveChatViewController.xib; sourceTree = "<group>"; };
+		1053368E1FEE7580000D02F2 /* LFLivePreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFLivePreview.m; sourceTree = "<group>"; };
+		1053368F1FEE7581000D02F2 /* LFLivePreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFLivePreview.h; sourceTree = "<group>"; };
 		106B6F141FD26F82006A1E66 /* TSCLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCLocationManager.h; sourceTree = "<group>"; };
 		106B6F151FD26F82006A1E66 /* TSCLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCLocationManager.m; sourceTree = "<group>"; };
 		106B6F171FD27235006A1E66 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -698,6 +701,8 @@
 		10BB444D1F9AFC4B00068AF2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1053368F1FEE7581000D02F2 /* LFLivePreview.h */,
+				1053368E1FEE7580000D02F2 /* LFLivePreview.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -984,6 +989,7 @@
 				109A07801FC724AC00F7436B /* MJExtensionConfig.m in Sources */,
 				10CB5D461FE79CBA0004CDC9 /* NSString+CachePath.m in Sources */,
 				10BCAC4E1F9CCBE100BA589E /* TSCTabBarViewController.m in Sources */,
+				105336901FEE7581000D02F2 /* LFLivePreview.m in Sources */,
 				109A8CA51FE4FDD300D3A704 /* TSCTicker.m in Sources */,
 				10BCAC581F9CE0DB00BA589E /* TSCMainViewController.m in Sources */,
 				108A261D1FAEB35A0028F84C /* TSCLaunchViewController.m in Sources */,

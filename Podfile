@@ -11,5 +11,6 @@ pod 'SDWebImage', '~> 4.0.0'
 pod 'Masonry', '~> 1.0.2'
 pod 'YYKit', '~> 1.0.9'
 pod 'MJExtension'
-pod ‘MJRefresh’
+pod 'MJRefresh'
+pod 'LFLiveKit'
 end
