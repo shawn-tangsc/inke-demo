@@ -97,10 +97,11 @@ pod 'UMengUShare/Social/QQ'
 ------------------------------------
 双击inke-demo下的.xcworkspace 应该就可以run了。
 
-<!--效果
+效果
 ------------------------------------
 
--->
+<!--<img src="/gif/login-page.gif"  width="310" />-->
+![live-page.gif](https://github.com/shawn-tangsc/inke-demo/blob/master/gif/live-page.gif)
 
 
 <!--<img src="/styles/images/zhifubao.PNG" alt="支付宝二维码付款给Freud" width="310" />-->
