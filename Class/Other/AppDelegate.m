@@ -11,6 +11,10 @@
 #import "TSCLocationManager.h"
 #import "AFNetworking.h"
 #import "TSCAdvertiseView.h"
+#import "TSCLoginViewController.h"
+#import "AppDelegate+TSCUMeung.h"
+#import <UMSocialCore/UMSocialCore.h>
+
 @interface AppDelegate ()
 
 @end
@@ -20,11 +24,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
     
-    TSCTabBarViewController * mainVC = [[TSCTabBarViewController alloc]init];
+    if (version >= 8.0) { // iOS8+ IconBadge需授权
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }
+    [self setupUmeng];
+    UIViewController * mainVC ;
+    
+//     mainVC = [[TSCTabBarViewController alloc]init];
+    mainVC = [[TSCLoginViewController alloc]init];
     
     self.window.rootViewController = mainVC;
-    
+    //获取用户的定位
     [[TSCLocationManager sharedManager]getGPS:^(NSString *lat, NSString *lon) {
         NSLog(@"经度%@,纬度：%@",lat,lon);
     }];
@@ -36,6 +49,14 @@
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
+    if (result == FALSE) {
+        //调用其他SDK，例如支付宝SDK等
+    }
+    return result;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

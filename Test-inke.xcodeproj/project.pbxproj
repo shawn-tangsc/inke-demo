@@ -21,6 +21,11 @@
 		10335EBE1FD988BB0083A98C /* TSCGiftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 10335EBC1FD988BB0083A98C /* TSCGiftCell.m */; };
 		10335EBF1FD988BB0083A98C /* TSCGiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10335EBD1FD988BB0083A98C /* TSCGiftCell.xib */; };
 		103F4AE41FDEC7E100A86DD3 /* TSCCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 103F4AE31FDEC7E100A86DD3 /* TSCCollectionViewFlowLayout.m */; };
+		1041E2721FEFE78E00054829 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1041E2711FEFE78500054829 /* SystemConfiguration.framework */; };
+		1041E2741FEFE7B200054829 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1041E2731FEFE7B200054829 /* libsqlite3.tbd */; };
+		1041E2761FEFE7CD00054829 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1041E2751FEFE7C200054829 /* CoreTelephony.framework */; };
+		1041E2821FEFEEA200054829 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1041E2811FEFEEA200054829 /* libc++.tbd */; };
+		1041E2891FEFF43400054829 /* AppDelegate+TSCUMeung.m in Sources */ = {isa = PBXBuildFile; fileRef = 1041E2881FEFF43400054829 /* AppDelegate+TSCUMeung.m */; };
 		104405E01FD921B70075243C /* TSCCommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 104405DF1FD921B70075243C /* TSCCommonUtils.m */; };
 		104F22381FCDAB59005BC4BD /* TSCLiveChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 104F22361FCDAB59005BC4BD /* TSCLiveChatViewController.m */; };
 		104F22391FCDAB59005BC4BD /* TSCLiveChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 104F22371FCDAB59005BC4BD /* TSCLiveChatViewController.xib */; };
@@ -30,6 +35,7 @@
 		106B6F1E1FD2AE52006A1E66 /* TSCFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 106B6F1D1FD2AE52006A1E66 /* TSCFlow.m */; };
 		10778A2F1FE2BF06002D6BF6 /* TSCAdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10778A2E1FE2BF06002D6BF6 /* TSCAdvertiseView.m */; };
 		10778A311FE2BF21002D6BF6 /* TSCAdvertiseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10778A301FE2BF21002D6BF6 /* TSCAdvertiseView.xib */; };
+		107CD08F1FEF546C007C92A5 /* loginVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 107CD08E1FEF546B007C92A5 /* loginVideo.mp4 */; };
 		108009931FB6E9F60087642C /* TSCMainTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 108009921FB6E9F60087642C /* TSCMainTopView.m */; };
 		108009991FB74C840087642C /* TSCHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 108009981FB74C840087642C /* TSCHttpTool.m */; };
 		10809FCC1FCADEE400665235 /* TSCPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10809FCA1FCADEE400665235 /* TSCPlayerViewController.m */; };
@@ -109,6 +115,8 @@
 		10F916BB1FC930AE00EE3947 /* TSCLiveCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F916B91FC930AE00EE3947 /* TSCLiveCellTableViewCell.m */; };
 		10F916BC1FC930AE00EE3947 /* TSCLiveCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F916BA1FC930AE00EE3947 /* TSCLiveCellTableViewCell.xib */; };
 		10F916BE1FC95D9700EE3947 /* TSCHotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F916BD1FC95D9700EE3947 /* TSCHotViewController.xib */; };
+		10F9C7381FEEABF7004C1485 /* TSCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F9C7361FEEABF7004C1485 /* TSCLoginViewController.m */; };
+		10F9C7391FEEABF7004C1485 /* TSCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F9C7371FEEABF7004C1485 /* TSCLoginViewController.xib */; };
 		E6037608D66C212C590B9B9B /* libPods-Test-inke.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD62C684C306370B1942FA42 /* libPods-Test-inke.a */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +145,12 @@
 		10335EBD1FD988BB0083A98C /* TSCGiftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TSCGiftCell.xib; sourceTree = "<group>"; };
 		103F4AE21FDEC7E100A86DD3 /* TSCCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCCollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		103F4AE31FDEC7E100A86DD3 /* TSCCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		1041E2711FEFE78500054829 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		1041E2731FEFE7B200054829 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1041E2751FEFE7C200054829 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		1041E2811FEFEEA200054829 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		1041E2871FEFF43400054829 /* AppDelegate+TSCUMeung.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+TSCUMeung.h"; sourceTree = "<group>"; };
+		1041E2881FEFF43400054829 /* AppDelegate+TSCUMeung.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+TSCUMeung.m"; sourceTree = "<group>"; };
 		104405DE1FD921B70075243C /* TSCCommonUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCCommonUtils.h; sourceTree = "<group>"; };
 		104405DF1FD921B70075243C /* TSCCommonUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCCommonUtils.m; sourceTree = "<group>"; };
 		104F22351FCDAB59005BC4BD /* TSCLiveChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCLiveChatViewController.h; sourceTree = "<group>"; };
@@ -152,6 +166,7 @@
 		10778A2D1FE2BF06002D6BF6 /* TSCAdvertiseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCAdvertiseView.h; sourceTree = "<group>"; };
 		10778A2E1FE2BF06002D6BF6 /* TSCAdvertiseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCAdvertiseView.m; sourceTree = "<group>"; };
 		10778A301FE2BF21002D6BF6 /* TSCAdvertiseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TSCAdvertiseView.xib; sourceTree = "<group>"; };
+		107CD08E1FEF546B007C92A5 /* loginVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = loginVideo.mp4; sourceTree = "<group>"; };
 		108009911FB6E9F60087642C /* TSCMainTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCMainTopView.h; sourceTree = "<group>"; };
 		108009921FB6E9F60087642C /* TSCMainTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCMainTopView.m; sourceTree = "<group>"; };
 		108009941FB72FD20087642C /* APIConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIConfig.h; sourceTree = "<group>"; };
@@ -287,6 +302,9 @@
 		10F916B91FC930AE00EE3947 /* TSCLiveCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCLiveCellTableViewCell.m; sourceTree = "<group>"; };
 		10F916BA1FC930AE00EE3947 /* TSCLiveCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TSCLiveCellTableViewCell.xib; sourceTree = "<group>"; };
 		10F916BD1FC95D9700EE3947 /* TSCHotViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSCHotViewController.xib; sourceTree = "<group>"; };
+		10F9C7351FEEABF7004C1485 /* TSCLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCLoginViewController.h; sourceTree = "<group>"; };
+		10F9C7361FEEABF7004C1485 /* TSCLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCLoginViewController.m; sourceTree = "<group>"; };
+		10F9C7371FEEABF7004C1485 /* TSCLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TSCLoginViewController.xib; sourceTree = "<group>"; };
 		85A779A6B061FF5FC6B7B5D8 /* Pods-Test-inke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-inke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test-inke/Pods-Test-inke.debug.xcconfig"; sourceTree = "<group>"; };
 		DD62C684C306370B1942FA42 /* libPods-Test-inke.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test-inke.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -296,8 +314,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				106B6F181FD27240006A1E66 /* CoreLocation.framework in Frameworks */,
+				10CFB3F01FCAA22D00FCFD9E /* libz.tbd in Frameworks */,
 				10216FE01FCB1590008B4F4C /* libstdc++.tbd in Frameworks */,
+				1041E2761FEFE7CD00054829 /* CoreTelephony.framework in Frameworks */,
+				10CFB3E81FCAA1D800FCFD9E /* CoreGraphics.framework in Frameworks */,
+				1041E2721FEFE78E00054829 /* SystemConfiguration.framework in Frameworks */,
+				1041E2741FEFE7B200054829 /* libsqlite3.tbd in Frameworks */,
+				106B6F181FD27240006A1E66 /* CoreLocation.framework in Frameworks */,
 				10CFB3FE1FCAB23600FCFD9E /* UIKit.framework in Frameworks */,
 				10CFB3FC1FCAA2BE00FCFD9E /* VideoToolbox.framework in Frameworks */,
 				10CFB3F81FCAA29100FCFD9E /* QuartzCore.framework in Frameworks */,
@@ -306,12 +329,11 @@
 				10CFB3F41FCAA25A00FCFD9E /* MobileCoreServices.framework in Frameworks */,
 				10CFB3F21FCAA24000FCFD9E /* MediaPlayer.framework in Frameworks */,
 				10CFB3EC1FCAA21200FCFD9E /* CoreVideo.framework in Frameworks */,
+				1041E2821FEFEEA200054829 /* libc++.tbd in Frameworks */,
 				10CFB3EA1FCAA1F900FCFD9E /* CoreMedia.framework in Frameworks */,
-				10CFB3E81FCAA1D800FCFD9E /* CoreGraphics.framework in Frameworks */,
 				10CFB3E61FCAA19C00FCFD9E /* AVFoundation.framework in Frameworks */,
 				10CFB3E51FCAA19000FCFD9E /* AudioToolbox.framework in Frameworks */,
 				E6037608D66C212C590B9B9B /* libPods-Test-inke.a in Frameworks */,
-				10CFB3F01FCAA22D00FCFD9E /* libz.tbd in Frameworks */,
 				10CFB3EE1FCAA21F00FCFD9E /* libbz2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,6 +344,10 @@
 		083E947CBDB9D63118139B59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1041E2811FEFEEA200054829 /* libc++.tbd */,
+				1041E2751FEFE7C200054829 /* CoreTelephony.framework */,
+				1041E2731FEFE7B200054829 /* libsqlite3.tbd */,
+				1041E2711FEFE78500054829 /* SystemConfiguration.framework */,
 				106B6F171FD27235006A1E66 /* CoreLocation.framework */,
 				10216FDF1FCB1590008B4F4C /* libstdc++.tbd */,
 				10216FDC1FCB151C008B4F4C /* IJKMediaFramework.framework */,
@@ -392,6 +418,13 @@
 				10778A301FE2BF21002D6BF6 /* TSCAdvertiseView.xib */,
 			);
 			path = advertise;
+			sourceTree = "<group>";
+		};
+		107CD0891FEF4A84007C92A5 /* login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = login;
 			sourceTree = "<group>";
 		};
 		109A8CC21FE505E500D3A704 /* liveSwiper */ = {
@@ -468,6 +501,7 @@
 		10BB44251F9AF92C00068AF2 /* Test-inke */ = {
 			isa = PBXGroup;
 			children = (
+				107CD08E1FEF546B007C92A5 /* loginVideo.mp4 */,
 				10BB442C1F9AF92C00068AF2 /* Main.storyboard */,
 				10BB442F1F9AF92C00068AF2 /* Assets.xcassets */,
 				10BB44311F9AF92C00068AF2 /* LaunchScreen.storyboard */,
@@ -499,6 +533,8 @@
 			children = (
 				10BB44261F9AF92C00068AF2 /* AppDelegate.h */,
 				10BB44271F9AF92C00068AF2 /* AppDelegate.m */,
+				1041E2871FEFF43400054829 /* AppDelegate+TSCUMeung.h */,
+				1041E2881FEFF43400054829 /* AppDelegate+TSCUMeung.m */,
 				10BB44531F9AFFE900068AF2 /* ViewController.h */,
 				10BB44541F9AFFE900068AF2 /* ViewController.m */,
 				10BB44561F9B003E00068AF2 /* yingke.pch */,
@@ -798,6 +834,9 @@
 				10BCAC551F9CE0DB00BA589E /* TSCMainViewController.h */,
 				10BCAC561F9CE0DB00BA589E /* TSCMainViewController.m */,
 				10BCAC571F9CE0DB00BA589E /* TSCMainViewController.xib */,
+				10F9C7351FEEABF7004C1485 /* TSCLoginViewController.h */,
+				10F9C7361FEEABF7004C1485 /* TSCLoginViewController.m */,
+				10F9C7371FEEABF7004C1485 /* TSCLoginViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -805,6 +844,7 @@
 		10E19A4B1FE27372000F0D32 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				107CD0891FEF4A84007C92A5 /* login */,
 				10778A321FE2C0D0002D6BF6 /* advertise */,
 				108009911FB6E9F60087642C /* TSCMainTopView.h */,
 				108009921FB6E9F60087642C /* TSCMainTopView.m */,
@@ -900,8 +940,10 @@
 				108A262D1FAF4A470028F84C /* TSCNearViewController.xib in Resources */,
 				10778A311FE2BF21002D6BF6 /* TSCAdvertiseView.xib in Resources */,
 				101B10BC1FE69D7100C010DB /* TSCBannerImageCell.xib in Resources */,
+				10F9C7391FEEABF7004C1485 /* TSCLoginViewController.xib in Resources */,
 				10B717EB1FD81F380047A78A /* TSCGiftViewController.xib in Resources */,
 				10335EBF1FD988BB0083A98C /* TSCGiftCell.xib in Resources */,
+				107CD08F1FEF546C007C92A5 /* loginVideo.mp4 in Resources */,
 				109A8CD31FE62B0900D3A704 /* TSCHotSwiperLiveCell.xib in Resources */,
 				104F22391FCDAB59005BC4BD /* TSCLiveChatViewController.xib in Resources */,
 			);
@@ -933,6 +975,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Test-inke/Pods-Test-inke-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina/SinaSDK/WeiboSDK.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialUI/UMSocialSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -987,6 +1033,7 @@
 				101B10BB1FE69D7100C010DB /* TSCBannerImageCell.m in Sources */,
 				10BB44551F9AFFE900068AF2 /* ViewController.m in Sources */,
 				109A07801FC724AC00F7436B /* MJExtensionConfig.m in Sources */,
+				10F9C7381FEEABF7004C1485 /* TSCLoginViewController.m in Sources */,
 				10CB5D461FE79CBA0004CDC9 /* NSString+CachePath.m in Sources */,
 				10BCAC4E1F9CCBE100BA589E /* TSCTabBarViewController.m in Sources */,
 				105336901FEE7581000D02F2 /* LFLivePreview.m in Sources */,
@@ -1005,6 +1052,7 @@
 				10F916AB1FC8552B00EE3947 /* TSCCards.m in Sources */,
 				104405E01FD921B70075243C /* TSCCommonUtils.m in Sources */,
 				10E19A4E1FE283CC000F0D32 /* TSCCommonHandler.m in Sources */,
+				1041E2891FEFF43400054829 /* AppDelegate+TSCUMeung.m in Sources */,
 				10BCAC5D1F9CE12200BA589E /* TSCMeViewController.m in Sources */,
 				104F22381FCDAB59005BC4BD /* TSCLiveChatViewController.m in Sources */,
 				109A077A1FC706F000F7436B /* TSCExtra.m in Sources */,
@@ -1109,6 +1157,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1157,6 +1206,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

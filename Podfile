@@ -13,4 +13,11 @@ pod 'YYKit', '~> 1.0.9'
 pod 'MJExtension'
 pod 'MJRefresh'
 pod 'LFLiveKit'
+pod 'UMengUShare/UI'
+# 集成新浪微博 【友盟官网技术文档这里标点符号有错，导入的时候记得更改】
+pod 'UMengUShare/Social/Sina'
+# 集成微信
+pod 'UMengUShare/Social/WeChat'
+# 集成QQ
+pod 'UMengUShare/Social/QQ'
 end
