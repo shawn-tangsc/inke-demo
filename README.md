@@ -78,6 +78,21 @@ cd ios
 ------------------------------------
 这里使用的是[LFLiveKit](https://github.com/LaiFengiOS/LFLiveKit),但是因为没有合适和直播推流的测试服务器地址，而且抓包映客的直播服务器可以连接，但是不能播放，所以该功能先只做到这里，待以后继续开发。
 
+集成友盟（第三方登录）
+------------------------------------
+大欢老师视频教学里面的友盟版本已经比较低了，所以我根据最新的[友盟文档](http://dev.umeng.com/social/ios/ios9)完成了第三方登录的功能（因为一些key的原因，我暂时只做了微信登录的功能，其他的根据文档可以自行开发）。
+其中，我因为没明白视频里面的sdk集成方式，所以我还是用了传统的pod的方式集成的。
+
+``` 
+pod 'UMengUShare/UI'
+# 集成新浪微博 【友盟官网技术文档这里标点符号有错，导入的时候记得更改】
+pod 'UMengUShare/Social/Sina'
+# 集成微信
+pod 'UMengUShare/Social/WeChat'
+# 集成QQ
+pod 'UMengUShare/Social/QQ'
+```
+
 执行
 ------------------------------------
 双击inke-demo下的.xcworkspace 应该就可以run了。
