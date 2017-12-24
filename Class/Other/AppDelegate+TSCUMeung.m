@@ -9,6 +9,12 @@
 #import "AppDelegate+TSCUMeung.h"
 #import <UMSocialCore/UMSocialCore.h>
 @implementation AppDelegate (TSCUMeung)
+
+
+
+/**
+    友盟设置，参考：https://www.jianshu.com/p/87d1d397d269  http://dev.umeng.com/social/ios/login-page https://www.jianshu.com/p/b0a7fddc855a
+ */
 - (void) setupUmeng{
     //打开日志
     [[UMSocialManager defaultManager] openLog:YES];
