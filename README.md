@@ -101,7 +101,10 @@ pod 'UMengUShare/Social/QQ'
 ------------------------------------
 
 <!--<img src="/gif/login-page.gif"  width="310" />-->
+![login-page.gif](https://github.com/shawn-tangsc/inke-demo/blob/master/gif/login-page.gif)
+![main-page.gif](https://github.com/shawn-tangsc/inke-demo/blob/master/gif/main-page.gif)
 ![live-page.gif](https://github.com/shawn-tangsc/inke-demo/blob/master/gif/live-page.gif)
+
 
 
 <!--<img src="/styles/images/zhifubao.PNG" alt="支付宝二维码付款给Freud" width="310" />-->
