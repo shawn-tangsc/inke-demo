@@ -68,6 +68,7 @@
     if(!_weiboBtn){
         _weiboBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_weiboBtn setBackgroundImage:[UIImage imageNamed:@"login_icon_weibo"] forState:UIControlStateNormal];
+        [_weiboBtn addTarget:self action:@selector(weiboClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _weiboBtn;
 }
@@ -290,6 +291,9 @@
     }];
 }
 
+-(void)weiboClick{
+    self.view.window.rootViewController = [[TSCTabBarViewController alloc] init];
+}
 
 /*
 #pragma mark - Navigation
