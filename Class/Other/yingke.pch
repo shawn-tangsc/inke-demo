@@ -22,6 +22,7 @@
 #import "MJExtension.h"//可以将下划线命名转换成驼峰命名，json转model
 #import "UIImageView+SDWebImage.h"
 #import "TSCCommonUtils.h" //公共方法类
+#import "UIView+TSCAlert.h"
 
 
 // Include any system framework and library headers here that should be included in all compilation units.
