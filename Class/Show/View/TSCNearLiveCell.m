@@ -7,6 +7,8 @@
 //
 
 #import "TSCNearLiveCell.h"
+#import "TSCTabBarViewController.h"
+
 @interface TSCNearLiveCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView *headView;
@@ -57,4 +59,26 @@
     // Initialization code
 }
 
+/**
+ 重写点击事件，如果点击区域在直播按钮上，则返回直播按钮的事件
+ */
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    UIWindow *keyWindow  = [UIApplication sharedApplication].keyWindow;
+    UIViewController *vc = keyWindow.rootViewController;
+    TSCTabBarViewController * tabbarVC = nil;
+    
+    if ([vc isKindOfClass:[TSCTabBarViewController class]])
+    {
+        tabbarVC = (TSCTabBarViewController *)vc;
+    }
+    
+    TSCTabBar* tabbar = tabbarVC.tscTabbar;
+    UIButton* btn = tabbar.camearButton;
+    UIView *result = [super hitTest:point withEvent:event];
+    CGPoint buttonPoint = [btn convertPoint:point fromView:self];
+    if ([btn pointInside:buttonPoint withEvent:event]) {
+        return btn;
+    }
+    return result;
+}
 @end
