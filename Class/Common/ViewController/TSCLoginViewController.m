@@ -290,7 +290,7 @@
         }
     }];
 }
-
+//模拟器上面没有微信 qq，所以做了一个后门，可以直接登陆
 -(void)weiboClick{
     self.view.window.rootViewController = [[TSCTabBarViewController alloc] init];
 }
