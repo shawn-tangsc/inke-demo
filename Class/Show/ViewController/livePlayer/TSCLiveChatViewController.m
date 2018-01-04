@@ -303,6 +303,12 @@ static NSString * chatCellId = @"TSCChatViewId";
     } completion:^(BOOL finished) {
         [imageView removeFromSuperview];
     }];
+    NSDictionary *dict = @{@"userName":@"shaw-tang",
+                           @"context":@"点了一个赞！",
+                           @"userLevel":@11, //在数字前加上@可以直接将数字转换成nsnumber对象
+                           @"tableWidth":[NSString stringWithFormat:@"%f",self.chatTableView.width]
+                           };
+    [self reloadChatTableWithData:dict];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
