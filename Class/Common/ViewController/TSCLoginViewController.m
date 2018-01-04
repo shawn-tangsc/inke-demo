@@ -152,7 +152,7 @@
     [self.playerView.layer addSublayer:layer];
     self.player.volume = 1.0f;
     [self.player play];
-    
+    //注册通知类型
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(runLoopMovie:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
 }
 

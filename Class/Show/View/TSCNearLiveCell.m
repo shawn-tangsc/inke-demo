@@ -25,6 +25,7 @@
     [self.headView downloadImage:imagePath placeholder:@"default_room"];
     self.distance.text = info.distance;
     self.level.text = [NSString stringWithFormat:@"%ld",info.creator.level];
+    //根据用户等级，判断等级部分的背景颜色
     if(info.creator.level < 17){
         self.levelBackground.backgroundColor = [UIColor colorWithRed:147.0/225.0 green:202.0/225.0 blue:20.0/225.0 alpha:1];
     }else if (info.creator.level<30 && 17<=info.creator.level){
