@@ -11,8 +11,11 @@
 #import "TSCGiftViewController.h"
 #import "TSCPlayerViewController.h"
 #import "TSCChatViewCell.h"
+#import "TSCSystemMsgCell.h"
 #import "TSCChatModel.h"
+//#import >
 static NSString * chatCellId = @"TSCChatViewId";
+static NSString * chatSystemMsgId = @"TSCSystemMsgId";
 
 @interface TSCLiveChatViewController ()
 
@@ -43,12 +46,15 @@ static NSString * chatCellId = @"TSCChatViewId";
 @property (nonatomic, strong) TSCGiftViewController *giftView;
 @property (nonatomic, strong) TSCPlayerViewController *playerVC;
 @property (nonatomic, strong) NSMutableArray<TSCChatModel*> *chatList;//初始化！！初始化！！
+@property (nonatomic, strong) NSDictionary *plistData;
+
+//@property (nonatomic, strong) A
 
 @end
 
 @implementation TSCLiveChatViewController
 
-#pragma mark setliveModel
+#pragma mark setliveModel  ---------------------------------------------------------------
 -(void)setLive:(TSCLive *)live{
     _live = live;
     [self.headImage downloadImage:live.creator.portrait placeholder:@"default_room"];
@@ -58,7 +64,7 @@ static NSString * chatCellId = @"TSCChatViewId";
 //    [self.onlineUsers setText:[NSString stringWithFormat:@"%ld",live.onlineUsers]];
 }
 
-#pragma mark initial
+#pragma mark initial  ---------------------------------------------------------------
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -68,6 +74,7 @@ static NSString * chatCellId = @"TSCChatViewId";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
 //    [self.chatTableView endEditing:YES];
     [self.chatTableView registerNib:[UINib nibWithNibName:@"TSCChatViewCell" bundle:nil] forCellReuseIdentifier:chatCellId];
+     [self.chatTableView registerNib:[UINib nibWithNibName:@"TSCSystemMsgCell" bundle:nil] forCellReuseIdentifier:chatSystemMsgId];
 //    [self.chatTableView reloadData];
 //    [self.chatTableView setContentOffset:CGPointMake(0, MAX(0, self.chatTableView.contentSize.height - self.chatTableView.height)) animated:YES];
 }
@@ -84,6 +91,7 @@ static NSString * chatCellId = @"TSCChatViewId";
     [self.messageBtn addTarget:self action:@selector(message) forControlEvents:UIControlEventTouchUpInside];
     [self.chatBtn addTarget:self action:@selector(chat) forControlEvents:UIControlEventTouchUpInside];
     [self addChildVC];
+    [self socketConnect];
 }
 
 /**
@@ -101,19 +109,29 @@ static NSString * chatCellId = @"TSCChatViewId";
     }];
 }
 
-#pragma mark-private function
+#pragma mark-private function ---------------------------------------------------------------
 /**
  发送聊天数据
  */
 - (IBAction)chatSendBtnClick:(id)sender {
     NSLog(@"发送发送");
     if([self.textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]].length !=0){
-        NSDictionary *dict = @{@"userName":@"shaw-tang",
-                               @"context":self.textField.text,
-                               @"userLevel":@11, //在数字前加上@可以直接将数字转换成nsnumber对象
-                               @"tableWidth":[NSString stringWithFormat:@"%f",self.chatTableView.width]
-                               };
-        [self reloadChatTableWithData:dict];
+        if(self.client.status != SocketIOClientStatusConnected){
+            NSDictionary *dict = @{@"userName":@"shaw-tang",
+                                   @"context":self.textField.text,
+                                   @"userLevel":@11, //在数字前加上@可以直接将数字转换成nsnumber对象
+                                   @"type":@0
+                                   };
+            [self reloadChatTableWithData:dict];
+        }else {
+            NSDictionary *dict = @{@"user":@"shaw-tang",
+                                   @"msg":self.textField.text,
+                                   @"userLevel":@11 //在数字前加上@可以直接将数字转换成nsstring对象
+                                   };
+            
+            [self.client emit:@"chat message" with:@[dict]];
+        }
+       
     }else{
         NSLog(@"发送的是空数据");
     }
@@ -125,7 +143,10 @@ static NSString * chatCellId = @"TSCChatViewId";
  @param dict 聊天数据的字典
  */
 -(void)reloadChatTableWithData:(NSDictionary *)dict{
-    TSCChatModel *model = [[TSCChatModel alloc]initWithDictinary:dict];
+    
+    NSMutableDictionary * dictDate = [[NSMutableDictionary alloc]initWithDictionary:dict];
+    [dictDate setValue:[NSString stringWithFormat:@"%f",self.chatTableView.width] forKey:@"tableWidth"];
+    TSCChatModel *model = [[TSCChatModel alloc]initWithDictinary:dictDate];
     [self.chatList addObject:model];
     [self.chatTableView reloadData];
     //http://stackoverflow.com/questions/8640409/how-to-keep-uitableview-contentoffset-after-calling-reloaddata
@@ -184,6 +205,7 @@ static NSString * chatCellId = @"TSCChatViewId";
 //    [self addChildVC];
     self.liveChatView.hidden = YES;
     self.playerVC.closeBtn.hidden = YES;
+    self.chatTableView.hidden = YES;
     [UIView animateWithDuration:0.5 animations:^{
         self.giftView.view.origin = CGPointMake(0, 0);
     }];
@@ -215,6 +237,7 @@ static NSString * chatCellId = @"TSCChatViewId";
     }];
     self.liveChatView.hidden = NO;
     self.playerVC.closeBtn.hidden = NO;
+    self.chatTableView.hidden = NO;
 }
 
 //定时器
@@ -255,10 +278,7 @@ static NSString * chatCellId = @"TSCChatViewId";
     [UIView animateWithDuration:duration delay:0.0f options:(curve<<16|UIViewAnimationOptionBeginFromCurrentState) animations:^{
         [self.view layoutIfNeeded];
     } completion:nil];
-    
-    
 }
-
 
 //触发爱心事件
 -(void) showMoreLoveAnimateFromView:(UIView *)fromView addToView:(UIView *)addToView {
@@ -303,33 +323,103 @@ static NSString * chatCellId = @"TSCChatViewId";
     } completion:^(BOOL finished) {
         [imageView removeFromSuperview];
     }];
-    NSDictionary *dict = @{@"userName":@"shaw-tang",
-                           @"context":@"点了一个赞！",
-                           @"userLevel":@11, //在数字前加上@可以直接将数字转换成nsnumber对象
-                           @"tableWidth":[NSString stringWithFormat:@"%f",self.chatTableView.width]
-                           };
-    [self reloadChatTableWithData:dict];
+    //不连接socket服务器也可以看效果
+    if(self.client.status != SocketIOClientStatusConnected){
+        NSDictionary *dict = @{@"userName":@"shaw-tang",
+                               @"context":@"点了一个赞！",
+                               @"userLevel":@11, //在数字前加上@可以直接将数字转换成nsnumber对象
+                               @"type":@2
+                               };
+        [self reloadChatTableWithData:dict];
+    }else{
+        NSDictionary *dict = @{@"user":@"shaw-tang",
+                               @"msg":@"点了一个赞！",
+                               @"userLevel":@11 ,//在数字前加上@可以直接将数字转换成nsstring对象
+                               @"type": @2
+                               };
+        
+        [self.client emit:@"chat message" with:@[dict]];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ 连接socket服务器的方法
+ */
+-(void)socketConnect{
+   //socketIO 内置时间http://cnodejs.org/topic/53911fd9c3ee0b5820f0b9ef
+    [self.client on:@"connect" callback:^(NSArray* data, SocketAckEmitter* ack) {
+        NSLog(@"*************\n\niOS客户端上线\n\n*************");
+        [self.client emit:@"user join" with:@[@{@"user":@"shawn_tang"}]];
+    }];
+    [self.client on:@"chat message" callback:^(NSArray * _Nonnull event, SocketAckEmitter * _Nonnull ack) {
+        
+        NSLog(@"*************\n\n来自客户端的消息\n\n%@\n\n*************",event?event[0]:@"");
+        NSDictionary *data = event[0];
+        
+        NSDictionary *dict = @{@"userName":data[@"user"],
+                               @"context":[NSString stringWithFormat:@"%@",data[@"msg"]],
+                               @"type":data[@"type"]?data[@"type"]:@0,
+                               @"userLevel": [NSString stringWithFormat:@"%@",data[@"userLevel"]]
+                               };
+        [self reloadChatTableWithData:dict];
+    }];
+    [self.client on:@"common" callback:^(NSArray * _Nonnull event, SocketAckEmitter * _Nonnull ack) {
+        
+        NSLog(@"*************\n\n来自客户端的消息\n\n%@\n\n*************",event?event[0]:@"");
+        NSDictionary *data = event[0];
+        NSDictionary *dict = @{@"context":data[@"msg"],
+                               @"type":data[@"type"]
+                               };
+        [self reloadChatTableWithData:dict];
+    }];
+    //单独发送
+    [self.client on:[NSString stringWithFormat:@"to shawn_tang"] callback:^(NSArray * _Nonnull event, SocketAckEmitter * _Nonnull ack) {
+        
+        NSLog(@"*************\n\n来自客户端的消息\n\n%@\n\n*************",event?event[0]:@"");
+        NSDictionary *data = event[0];
+        NSDictionary *dict = @{@"context":data[@"msg"],
+                               @"type":data[@"type"]
+                               };
+        [self reloadChatTableWithData:dict];
+    }];
+    
+    [self.client on:@"disconnect" callback:^(NSArray * _Nonnull event, SocketAckEmitter * _Nonnull ack) {
+        NSLog(@"*************\n\niOS客户端下线\n\n*************%@",event?event[0]:@"");
+    }];
+    [self.client on:@"error" callback:^(NSArray * _Nonnull event, SocketAckEmitter * _Nonnull ack) {
+        NSLog(@"*************\n\n%@\n\n*************",event?event[0]:@"");
+    }];
+    [self.client connect];
+}
 
-#pragma mark- UITableViewDelegate 不要忘记在xib文件里面将table的delegate和datasource绑到file owner上面
+
+#pragma mark- UITableViewDelegate 不要忘记在xib文件里面将table的delegate和datasource绑到file owner上面 -------------------------------------------------------------------------------------------
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.chatList.count;
     //    return sel;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    TSCChatViewCell *cell = [tableView dequeueReusableCellWithIdentifier:chatCellId];
-    cell.model = self.chatList[indexPath.row];
-    return cell;
+    if(self.chatList[indexPath.row].type.integerValue == 1){
+        TSCSystemMsgCell *cell = [tableView dequeueReusableCellWithIdentifier:chatSystemMsgId];
+        cell.model = self.chatList[indexPath.row];
+        return cell;
+    }else{
+        TSCChatViewCell *cell = [tableView dequeueReusableCellWithIdentifier:chatCellId];
+        cell.model = self.chatList[indexPath.row];
+        return cell;
+    }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return MAX(35, self.chatList[indexPath.row].cellHeight.integerValue+10);
 }
-#pragma mark-touch event listen
+
+
+#pragma mark-touch event listen ---------------------------------------------------------------
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     //判断现在是否是键盘弹出的状态
     if (self.textField.isEditing){
@@ -352,7 +442,22 @@ static NSString * chatCellId = @"TSCChatViewId";
     }
 }
 
-#pragma mark lazy
+#pragma mark lazy -----------------------------------------------------------------------------
+-(SocketIOClient *)client{
+    if(!_client){
+        //只要去改other文件夹中的property.plist文件，就可以自己绑定自己的socket服务器ip
+        NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://%@:%@",self.plistData[@"socketIP"],self.plistData[@"socketHost"]]];
+        
+        
+//********************************** 下面注释是因为最新版本的Socket.IO-Client-Swift 13.1.0 版本无法连接nodejs的socket，所以新语法无法使用， 只能版本回退到老版本***************
+//        SocketManager *manager = [[SocketManager alloc]initWithSocketURL:url config:@{@"log":@YES,@"compress":@YES}];
+//        _client = manager.defaultSocket;
+        
+        
+        _client = [[SocketIOClient alloc] initWithSocketURL:url config:@{@"log":@YES,@"compress":@YES}];
+    }
+    return _client;
+}
 -(TSCPlayerViewController *)playerVC{
     if(!_playerVC){
         UIViewController *vc = [TSCCommonUtils superViewController:self];
@@ -481,6 +586,14 @@ static NSString * chatCellId = @"TSCChatViewId";
         _chatList = [NSMutableArray array];
     }
     return _chatList;
+}
+
+-(NSDictionary *)plistData{
+    if(!_plistData){
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"property" ofType:@"plist"];
+        _plistData = [[NSDictionary alloc]initWithContentsOfFile:path];
+    }
+    return _plistData;
 }
 /*
 #pragma mark - Navigation

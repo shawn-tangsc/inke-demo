@@ -93,9 +93,54 @@ pod 'UMengUShare/Social/WeChat'
 pod 'UMengUShare/Social/QQ'
 ```
 
+**<font color=red face="黑体">如果是真机的话可以使用微信登陆看效果，我也为模拟器登陆做了一个登陆后门，点微博登陆就可以了</font>**
+
 执行
 ------------------------------------
 双击inke-demo下的.xcworkspace 应该就可以run了。
+
+**<font color=red face="黑体">如果执行的时候在socketIO报错</font>**
+
+```
+Swift Compiler Error 
+SocketIOClient.Swift line 82
+private lazy var logType = "SocketIOClient{(nsp)}"
+(Cannot use instance member 'nsp' within property initializer; property initializers run before 'self' is available)
+
+SocketEngine.Swift line 199
+if let data = Data(base64Encoded: noPrefix, options: .ignoreUnknownCharacters) {
+(Value of optional type 'String?' not unwrapped; did you mean to use '!' or '?'?)
+
+SocketEngine.Swift line 663
+func setConnected(_ value: Bool) {
+(Method 'setConnected' with Objective-C selector 'setConnected:' conflicts with setter for 'connected' with the same Objective-C selector)
+```
+是因为你的swift版本过时，需要更新。点击Xcode顶部的Edit => Convert => TO Current Swift Syntas，选择SocketIO.framework,Starscream.framework和你的项目名.framework 然后covert。
+
+
+
+聊天室
+------------------------------------
+用第三方库Socket.IO-Client-Swift 做了一个聊天室，这个聊天室的后台是用nodejs的socket.io搭建的，而且我也已经[上传github了](https://github.com/shawn-tangsc/node-socket-chat)。
+
++ 联调
+
+
+>1.启动node服务器
+>>node服务器的启动我已经在[node-socket-chat](https://github.com/shawn-tangsc/node-socket-chat)写过了。这里就不再赘述了。
+
+>2.修改ip地址
+>>请到 XX/inke-demo/Class/Other/property.plist 修改socketIP就可以了
+
+同样，我做了判断，如果不需要联调后端的，也一样可以看效果。
+
+需要帮助的问题
+------------------------------------
+在开发的时候，我碰到了几个问题，一直没思路，有的还放着未开发，有的想办法绕过去了，如果有大神知道怎么解决，非常感谢能给个思路！可以直接加我qq（344509434），或者直接发我邮箱tangscsh@icloud.com, 非常感谢！！	
+
++ 我使用最新版Socket.IO-Client-Swift 13.1.0 版本的时候，怎么都调用不通我后台node的socketio，最后只能退版本绕过去。
+
++ 直播引流的时候，是怎么做到像映客这样，可以分屏（小屏还可拖动）播放的，直播流的源只有一个啊。
 
 效果
 ------------------------------------

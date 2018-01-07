@@ -19,6 +19,7 @@
 @property (nonatomic, assign) CGSize secondContentSize;
 @property (nonatomic, strong) NSNumber *cellHeight;
 @property (nonatomic,strong) NSNumber *backgroundTrailling;
+@property (nonatomic, strong) NSNumber *type;
 
 -(instancetype)initWithDictinary:(NSDictionary *)dict;
 @end

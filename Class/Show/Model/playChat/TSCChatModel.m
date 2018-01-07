@@ -13,31 +13,38 @@
     if(self = [super init]){
         _name = [NSString stringWithFormat:@"%@:",dict[@"userName"]];
         _context = dict[@"context"];
-        _userLevel = dict[@"userLevel"];
+        _userLevel = [NSNumber numberWithString:[NSString stringWithFormat:@"%@",dict[@"userLevel"]]];
         NSNumber *tableWidth = dict[@"tableWidth"];
         _tableWidth = tableWidth;
         NSLog(@"%f",tableWidth.floatValue);
+        _type = dict[@"type"];
         
-/*------------------------------------计算文本宽度是否为两行--------------------------------------------*/
-        //计算名字宽度
-        CGFloat nameWidth = [_name boundingRectWithSize:CGSizeMake(70, 15) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.width;
-        //计算文本宽度
-        CGFloat contentWidth = [_context boundingRectWithSize:CGSizeMake(MAXFLOAT, 15) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.width;
-        //第一行可行的宽度
-        CGFloat contentMaxWidth = tableWidth.floatValue - nameWidth - 52;//5*4的间隔+32的level宽度
-        
-        if(contentWidth > contentMaxWidth){
-            _isMoreLine = YES;
-            //计算第一行几个字 （先算每单位中能放几个字,再算出第一行的宽度内可以放几个字）
-            NSUInteger cutLength = contentMaxWidth * (CGFloat)_context.length / contentWidth;
-            _firstContent = [_context substringToIndex:cutLength];
-            _secondContent = [_context substringFromIndex:cutLength];
-            _secondContentSize = [_secondContent boundingRectWithSize:CGSizeMake(tableWidth.floatValue -10, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size;
-            _cellHeight = [NSNumber numberWithFloat:_secondContentSize.height + 10 + 16];
-        }else {
-            _backgroundTrailling =[NSNumber numberWithFloat:contentMaxWidth - contentWidth];
+        if(_type.integerValue == 1){
+             CGFloat contentHeight= [_context boundingRectWithSize:CGSizeMake(_tableWidth.floatValue-10, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.height;
+            _cellHeight = [NSNumber numberWithFloat:contentHeight+10];
+        }else{
+            /*------------------------------------计算文本宽度是否为两行--------------------------------------------*/
+            //计算名字宽度
+            CGFloat nameWidth = [_name boundingRectWithSize:CGSizeMake(70, 15) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.width;
+            //计算文本宽度
+            CGFloat contentWidth = [_context boundingRectWithSize:CGSizeMake(MAXFLOAT, 15) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size.width;
+            //第一行可行的宽度
+            CGFloat contentMaxWidth = tableWidth.floatValue - nameWidth - 52;//5*4的间隔+32的level宽度
+            
+            if(contentWidth > contentMaxWidth){
+                _isMoreLine = YES;
+                //计算第一行几个字 （先算每单位中能放几个字,再算出第一行的宽度内可以放几个字）
+                NSUInteger cutLength = contentMaxWidth * (CGFloat)_context.length / contentWidth;
+                _firstContent = [_context substringToIndex:cutLength];
+                _secondContent = [_context substringFromIndex:cutLength];
+                _secondContentSize = [_secondContent boundingRectWithSize:CGSizeMake(tableWidth.floatValue -10, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]} context:nil].size;
+                _cellHeight = [NSNumber numberWithFloat:_secondContentSize.height + 10 + 16];
+            }else {
+                _backgroundTrailling =[NSNumber numberWithFloat:contentMaxWidth - contentWidth];
+            }
         }
-    }
+        }
+
     return self;
 }
 @end

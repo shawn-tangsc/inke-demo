@@ -46,6 +46,7 @@
     return _closeBtn;
 }
 -(void)closeAction:(UIButton *)button{
+    [self.liveChatVC.client disconnect];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

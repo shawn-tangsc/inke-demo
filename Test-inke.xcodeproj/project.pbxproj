@@ -36,6 +36,9 @@
 		106B6F161FD26F82006A1E66 /* TSCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 106B6F151FD26F82006A1E66 /* TSCLocationManager.m */; };
 		106B6F181FD27240006A1E66 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 106B6F171FD27235006A1E66 /* CoreLocation.framework */; };
 		106B6F1E1FD2AE52006A1E66 /* TSCFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = 106B6F1D1FD2AE52006A1E66 /* TSCFlow.m */; };
+		1075B1212001DAA100956F65 /* TSCSystemMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1075B11F2001DAA100956F65 /* TSCSystemMsgCell.m */; };
+		1075B1222001DAA100956F65 /* TSCSystemMsgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1075B1202001DAA100956F65 /* TSCSystemMsgCell.xib */; };
+		1075B1242001E95300956F65 /* property.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1075B1232001E95300956F65 /* property.plist */; };
 		10778A2F1FE2BF06002D6BF6 /* TSCAdvertiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10778A2E1FE2BF06002D6BF6 /* TSCAdvertiseView.m */; };
 		10778A311FE2BF21002D6BF6 /* TSCAdvertiseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10778A301FE2BF21002D6BF6 /* TSCAdvertiseView.xib */; };
 		107CD08F1FEF546C007C92A5 /* loginVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 107CD08E1FEF546B007C92A5 /* loginVideo.mp4 */; };
@@ -112,6 +115,14 @@
 		10E19A411FE26B5E000F0D32 /* TSCAdvertisingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E19A401FE26B5E000F0D32 /* TSCAdvertisingData.m */; };
 		10E19A441FE26B91000F0D32 /* TSCAdvertisingRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E19A431FE26B91000F0D32 /* TSCAdvertisingRecord.m */; };
 		10E19A4E1FE283CC000F0D32 /* TSCCommonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E19A4D1FE283CC000F0D32 /* TSCCommonHandler.m */; };
+		10E2C91F2000996300CB837C /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E2C9202000996300CB837C /* MJRefresh.framework */; };
+		10E2C9212000996900CB837C /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E2C9222000996900CB837C /* Masonry.framework */; };
+		10E2C9232000997A00CB837C /* SocketIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E2C9242000997A00CB837C /* SocketIO.framework */; };
+		10E2C9252000998300CB837C /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E2C92B2000998300CB837C /* AFNetworking.framework */; };
+		10E2C9262000998300CB837C /* LFLiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E2C92C2000998300CB837C /* LFLiveKit.framework */; };
+		10E2C9272000998300CB837C /* MJExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E2C92D2000998300CB837C /* MJExtension.framework */; };
+		10E2C9282000998300CB837C /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E2C92E2000998300CB837C /* SDWebImage.framework */; };
+		10E2C92A2000998300CB837C /* YYKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E2C9302000998300CB837C /* YYKit.framework */; };
 		10F916AB1FC8552B00EE3947 /* TSCCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F916AA1FC8552B00EE3947 /* TSCCards.m */; };
 		10F916AE1FC8558600EE3947 /* TSCCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F916AD1FC8558600EE3947 /* TSCCover.m */; };
 		10F916B11FC855EC00EE3947 /* TSCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F916B01FC855EC00EE3947 /* TSCData.m */; };
@@ -121,7 +132,7 @@
 		10F916BE1FC95D9700EE3947 /* TSCHotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F916BD1FC95D9700EE3947 /* TSCHotViewController.xib */; };
 		10F9C7381FEEABF7004C1485 /* TSCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F9C7361FEEABF7004C1485 /* TSCLoginViewController.m */; };
 		10F9C7391FEEABF7004C1485 /* TSCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10F9C7371FEEABF7004C1485 /* TSCLoginViewController.xib */; };
-		E6037608D66C212C590B9B9B /* libPods-Test-inke.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DD62C684C306370B1942FA42 /* libPods-Test-inke.a */; };
+		3886AC861C6DBBC8BB2E0460 /* Pods_Test_inke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 520D880F2BD04D7D92B907AA /* Pods_Test_inke.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +183,10 @@
 		106B6F171FD27235006A1E66 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		106B6F1C1FD2AE52006A1E66 /* TSCFlow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCFlow.h; sourceTree = "<group>"; };
 		106B6F1D1FD2AE52006A1E66 /* TSCFlow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCFlow.m; sourceTree = "<group>"; };
+		1075B11E2001DAA100956F65 /* TSCSystemMsgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCSystemMsgCell.h; sourceTree = "<group>"; };
+		1075B11F2001DAA100956F65 /* TSCSystemMsgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCSystemMsgCell.m; sourceTree = "<group>"; };
+		1075B1202001DAA100956F65 /* TSCSystemMsgCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TSCSystemMsgCell.xib; sourceTree = "<group>"; };
+		1075B1232001E95300956F65 /* property.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = property.plist; sourceTree = "<group>"; };
 		10778A2D1FE2BF06002D6BF6 /* TSCAdvertiseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCAdvertiseView.h; sourceTree = "<group>"; };
 		10778A2E1FE2BF06002D6BF6 /* TSCAdvertiseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCAdvertiseView.m; sourceTree = "<group>"; };
 		10778A301FE2BF21002D6BF6 /* TSCAdvertiseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TSCAdvertiseView.xib; sourceTree = "<group>"; };
@@ -252,6 +267,7 @@
 		10B717E71FD81F380047A78A /* TSCGiftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCGiftViewController.h; sourceTree = "<group>"; };
 		10B717E81FD81F380047A78A /* TSCGiftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCGiftViewController.m; sourceTree = "<group>"; };
 		10B717E91FD81F380047A78A /* TSCGiftViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TSCGiftViewController.xib; sourceTree = "<group>"; };
+		10B89B921FFF6A7C003DAD60 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		10BB44231F9AF92C00068AF2 /* Test-inke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Test-inke.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10BB44261F9AF92C00068AF2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		10BB44271F9AF92C00068AF2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -301,6 +317,18 @@
 		10E19A431FE26B91000F0D32 /* TSCAdvertisingRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCAdvertisingRecord.m; sourceTree = "<group>"; };
 		10E19A4C1FE283CC000F0D32 /* TSCCommonHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCCommonHandler.h; sourceTree = "<group>"; };
 		10E19A4D1FE283CC000F0D32 /* TSCCommonHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCCommonHandler.m; sourceTree = "<group>"; };
+		10E2C8F12000869D00CB837C /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E2C8F3200086D200CB837C /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E2C8F5200088ED00CB837C /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E2C9202000996300CB837C /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E2C9222000996900CB837C /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E2C9242000997A00CB837C /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E2C92B2000998300CB837C /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E2C92C2000998300CB837C /* LFLiveKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LFLiveKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E2C92D2000998300CB837C /* MJExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MJExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E2C92E2000998300CB837C /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E2C92F2000998300CB837C /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E2C9302000998300CB837C /* YYKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YYKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F916A91FC8552B00EE3947 /* TSCCards.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCCards.h; sourceTree = "<group>"; };
 		10F916AA1FC8552B00EE3947 /* TSCCards.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCCards.m; sourceTree = "<group>"; };
 		10F916AC1FC8558600EE3947 /* TSCCover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCCover.h; sourceTree = "<group>"; };
@@ -316,8 +344,8 @@
 		10F9C7351FEEABF7004C1485 /* TSCLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCLoginViewController.h; sourceTree = "<group>"; };
 		10F9C7361FEEABF7004C1485 /* TSCLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCLoginViewController.m; sourceTree = "<group>"; };
 		10F9C7371FEEABF7004C1485 /* TSCLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TSCLoginViewController.xib; sourceTree = "<group>"; };
+		520D880F2BD04D7D92B907AA /* Pods_Test_inke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test_inke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A779A6B061FF5FC6B7B5D8 /* Pods-Test-inke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test-inke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test-inke/Pods-Test-inke.debug.xcconfig"; sourceTree = "<group>"; };
-		DD62C684C306370B1942FA42 /* libPods-Test-inke.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Test-inke.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +353,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10E2C9252000998300CB837C /* AFNetworking.framework in Frameworks */,
+				10E2C9262000998300CB837C /* LFLiveKit.framework in Frameworks */,
+				10E2C9272000998300CB837C /* MJExtension.framework in Frameworks */,
+				10E2C9282000998300CB837C /* SDWebImage.framework in Frameworks */,
+				10E2C92A2000998300CB837C /* YYKit.framework in Frameworks */,
+				10E2C9232000997A00CB837C /* SocketIO.framework in Frameworks */,
+				10E2C9212000996900CB837C /* Masonry.framework in Frameworks */,
+				10E2C91F2000996300CB837C /* MJRefresh.framework in Frameworks */,
 				10CFB3F01FCAA22D00FCFD9E /* libz.tbd in Frameworks */,
 				10216FE01FCB1590008B4F4C /* libstdc++.tbd in Frameworks */,
 				1041E2761FEFE7CD00054829 /* CoreTelephony.framework in Frameworks */,
@@ -344,8 +380,8 @@
 				10CFB3EA1FCAA1F900FCFD9E /* CoreMedia.framework in Frameworks */,
 				10CFB3E61FCAA19C00FCFD9E /* AVFoundation.framework in Frameworks */,
 				10CFB3E51FCAA19000FCFD9E /* AudioToolbox.framework in Frameworks */,
-				E6037608D66C212C590B9B9B /* libPods-Test-inke.a in Frameworks */,
 				10CFB3EE1FCAA21F00FCFD9E /* libbz2.tbd in Frameworks */,
+				3886AC861C6DBBC8BB2E0460 /* Pods_Test_inke.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +391,19 @@
 		083E947CBDB9D63118139B59 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				10E2C92B2000998300CB837C /* AFNetworking.framework */,
+				10E2C92C2000998300CB837C /* LFLiveKit.framework */,
+				10E2C92D2000998300CB837C /* MJExtension.framework */,
+				10E2C92E2000998300CB837C /* SDWebImage.framework */,
+				10E2C92F2000998300CB837C /* Starscream.framework */,
+				10E2C9302000998300CB837C /* YYKit.framework */,
+				10E2C9242000997A00CB837C /* SocketIO.framework */,
+				10E2C9222000996900CB837C /* Masonry.framework */,
+				10E2C9202000996300CB837C /* MJRefresh.framework */,
+				10E2C8F5200088ED00CB837C /* MJRefresh.framework */,
+				10E2C8F3200086D200CB837C /* Masonry.framework */,
+				10E2C8F12000869D00CB837C /* Masonry.framework */,
+				10B89B921FFF6A7C003DAD60 /* CFNetwork.framework */,
 				1041E2811FEFEEA200054829 /* libc++.tbd */,
 				1041E2751FEFE7C200054829 /* CoreTelephony.framework */,
 				1041E2731FEFE7B200054829 /* libsqlite3.tbd */,
@@ -377,7 +426,7 @@
 				10CFB3E71FCAA1CB00FCFD9E /* CoreGraphics.framework */,
 				10CFB3E41FCAA18300FCFD9E /* AudioToolbox.framework */,
 				10CFB3DE1FCA9EB700FCFD9E /* AVFoundation.framework */,
-				DD62C684C306370B1942FA42 /* libPods-Test-inke.a */,
+				520D880F2BD04D7D92B907AA /* Pods_Test_inke.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -408,6 +457,9 @@
 				105A75761FFB5EF300C8B240 /* TSCChatViewCell.h */,
 				105A75771FFB5EF300C8B240 /* TSCChatViewCell.m */,
 				105A75781FFB5EF300C8B240 /* TSCChatViewCell.xib */,
+				1075B11E2001DAA100956F65 /* TSCSystemMsgCell.h */,
+				1075B11F2001DAA100956F65 /* TSCSystemMsgCell.m */,
+				1075B1202001DAA100956F65 /* TSCSystemMsgCell.xib */,
 			);
 			path = play;
 			sourceTree = "<group>";
@@ -585,6 +637,7 @@
 				109A077F1FC724AC00F7436B /* MJExtensionConfig.m */,
 				104405DE1FD921B70075243C /* TSCCommonUtils.h */,
 				104405DF1FD921B70075243C /* TSCCommonUtils.m */,
+				1075B1232001E95300956F65 /* property.plist */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -938,6 +991,7 @@
 				TargetAttributes = {
 					10BB44221F9AF92C00068AF2 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = "";
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -982,6 +1036,8 @@
 				108A262D1FAF4A470028F84C /* TSCNearViewController.xib in Resources */,
 				10778A311FE2BF21002D6BF6 /* TSCAdvertiseView.xib in Resources */,
 				101B10BC1FE69D7100C010DB /* TSCBannerImageCell.xib in Resources */,
+				1075B1242001E95300956F65 /* property.plist in Resources */,
+				1075B1222001DAA100956F65 /* TSCSystemMsgCell.xib in Resources */,
 				105A757A1FFB5EF300C8B240 /* TSCChatViewCell.xib in Resources */,
 				10F9C7391FEEABF7004C1485 /* TSCLoginViewController.xib in Resources */,
 				10B717EB1FD81F380047A78A /* TSCGiftViewController.xib in Resources */,
@@ -1001,9 +1057,26 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Test-inke/Pods-Test-inke-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/LFLiveKit/LFLiveKit.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFLiveKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1017,7 +1090,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Test-inke/Pods-Test-inke-resources.sh",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ/QQSDK/TencentOpenApi_IOS_Bundle.bundle",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina/SinaSDK/WeiboSDK.bundle",
@@ -1093,6 +1165,7 @@
 				1015F9491FDE24F5003F5286 /* TSCGiftExtra.m in Sources */,
 				105A757E1FFB82C900C8B240 /* UIView+TSCAlert.m in Sources */,
 				10809FCC1FCADEE400665235 /* TSCPlayerViewController.m in Sources */,
+				1075B1212001DAA100956F65 /* TSCSystemMsgCell.m in Sources */,
 				10F916AB1FC8552B00EE3947 /* TSCCards.m in Sources */,
 				104405E01FD921B70075243C /* TSCCommonUtils.m in Sources */,
 				10E19A4E1FE283CC000F0D32 /* TSCCommonHandler.m in Sources */,
@@ -1264,7 +1337,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SFB7LW4Q3V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1276,6 +1351,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "noahwm.com.Test-inke";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Test-inke-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1286,7 +1364,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = SFB7LW4Q3V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1298,6 +1378,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "noahwm.com.Test-inke";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Test-inke-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

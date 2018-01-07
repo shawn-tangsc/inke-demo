@@ -62,7 +62,9 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="70" id="zlc-HP-hE6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="name:"/>
+                                <state key="normal" title="name:">
+                                    <color key="titleColor" red="0.0017871429449999999" green="0.84962344170000004" blue="0.7903378606" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="nameClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QhF-jF-NJ0"/>
                                 </connections>
@@ -121,6 +123,8 @@
                 <outlet property="level" destination="qCn-Ef-YTm" id="qej-F9-1ml"/>
                 <outlet property="levelView" destination="7sr-BF-bBF" id="Aq9-3L-K9J"/>
                 <outlet property="secondContent" destination="84W-Gs-tZL" id="YhY-pB-Ajz"/>
+                <outlet property="secondContentLeading" destination="hCa-qo-App" id="ifI-kR-Bu9"/>
+                <outlet property="secondContentTop" destination="win-mV-WJI" id="auE-2m-T12"/>
                 <outlet property="userName" destination="j1r-Ts-bpk" id="lrz-PS-9Jb"/>
             </connections>
             <point key="canvasLocation" x="-45" y="101.5"/>

@@ -15,7 +15,7 @@
 #ifndef yingke_pch
 #define yingke_pch
 #import "Masonry.h"//autolayout 布局控件
-#import "MJRefresh.h"//下拉刷新
+#import "MJRefresh/MJRefresh.h"//下拉刷新
 #import "TSCMacros.h"//宏命令
 #import "YYKit.h"
 #import "APIConfig.h"
@@ -23,6 +23,11 @@
 #import "UIImageView+SDWebImage.h"
 #import "TSCCommonUtils.h" //公共方法类
 #import "UIView+TSCAlert.h"
+#import <SocketIO/SocketIO-Swift.h>
+#import <SDWebImage/SDImageCache.h>
+
+
+
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

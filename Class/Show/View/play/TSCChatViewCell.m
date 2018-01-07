@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *secondContent;
 @property (weak, nonatomic) IBOutlet UIView *backgroudView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *backgroundTraillingConstraints;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *secondContentLeading;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *secondContentTop;
 
 
 @end
@@ -25,6 +27,9 @@
     [self clearData];
     _model = model;
    
+    if(model.type.integerValue == 2){
+        self.context.textColor = [UIColor yellowColor];
+    }
     [self.userName setTitle:model.name forState:UIControlStateNormal];
     self.level.text =[NSString stringWithFormat:@"%ld",(long)model.userLevel.integerValue] ;
     if(model.userLevel.integerValue < 17){
@@ -44,13 +49,15 @@
     if(model.isMoreLine){
         self.context.text = model.firstContent;
         self.secondContent.text = model.secondContent;
-//        self.secondContentWidthConstraints.constant = model.secondContentSize.width;
-//        self.secondContentHeightConstraints.constant = model.secondContentSize.height;
-//        [self.secondContent layoutIfNeeded];
+        //        self.secondContentWidthConstraints.constant = model.secondContentSize.width;
+        //        self.secondContentHeightConstraints.constant = model.secondContentSize.height;
+        //        [self.secondContent layoutIfNeeded];
     }else{
         self.context.text = model.context;
         self.backgroundTraillingConstraints.constant+=model.backgroundTrailling.floatValue-10;
     }
+    
+    
 }
 - (IBAction)nameClick:(id)sender {
     [self.superview showAlert:@"人物信息还没做"];

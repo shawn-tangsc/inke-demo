@@ -15,7 +15,7 @@
 #import "NSString+CachePath.h"
 #import "SDWebImageManager.h"
 #import "SDImageCacheConfig.h"
-#import <SDImageCache.h>
+
 static int showtime = 3;
 
 @interface TSCAdvertiseView()

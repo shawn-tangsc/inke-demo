@@ -11,6 +11,7 @@
 @interface TSCLiveChatViewController : TSCBaseViewController
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 @property (nonatomic,strong) TSCLive * live;
+@property (nonatomic, strong) SocketIOClient *client;
 
 -(void) closeGiftView;
 @end
