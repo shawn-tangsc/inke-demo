@@ -359,15 +359,21 @@ static NSString * chatSystemMsgId = @"TSCSystemMsgId";
     } completion:^(BOOL finished) {
         [imageView removeFromSuperview];
     }];
-    NSDictionary *dict = @{@"userName":@"shaw-tang",
-                           @"context":@"点了一个赞！",
-                           @"userLevel":@11, //在数字前加上@可以直接将数字转换成nsnumber对象
-                           @"type":@2
-                           };
-    //不连接socket服务器也可以看效果
+
     if(self.client.status != SocketIOClientStatusConnected){
+        NSDictionary *dict = @{@"userName":@"shaw-tang",
+                               @"context":@"点了一个赞！",
+                               @"userLevel":@11, //在数字前加上@可以直接将数字转换成nsnumber对象
+                               @"type":@2
+                               };
         [self reloadChatTableWithData:dict];
     }else{
+        NSDictionary *dict = @{@"user":@"shaw-tang",
+                               @"msg":@"点了一个赞！",
+                               @"userLevel":@11 ,//在数字前加上@可以直接将数字转换成nsstring对象
+                               @"type": @2
+                               };
+        
         [self.client emit:@"chat message" with:@[dict]];
     }
 }
