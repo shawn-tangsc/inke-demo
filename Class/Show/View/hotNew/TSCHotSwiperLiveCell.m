@@ -192,7 +192,8 @@ static NSString *imageIconId = @"TSCBannerImageCell";
     }];
     [self.lineView mas_remakeConstraints:^(MASConstraintMaker *make) {
         CGFloat iconLenth =iconurl?20:0;
-        make.size.mas_equalTo(CGSizeMake([self.cellName.text length]*13+iconLenth, 2));
+        CGFloat width = [self.cellName.text sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:13]}].width;
+        make.size.mas_equalTo(CGSizeMake(width+iconLenth, 2));
         make.top.equalTo(self.cellName.mas_bottom).offset(3);
         make.left.offset(10);
     }];

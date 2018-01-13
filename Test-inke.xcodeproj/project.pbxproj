@@ -52,6 +52,8 @@
 		108A26271FAF4A130028F84C /* TSCHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 108A26251FAF4A130028F84C /* TSCHotViewController.m */; };
 		108A262C1FAF4A470028F84C /* TSCNearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 108A262A1FAF4A470028F84C /* TSCNearViewController.m */; };
 		108A262D1FAF4A470028F84C /* TSCNearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 108A262B1FAF4A470028F84C /* TSCNearViewController.xib */; };
+		108B7F542004644900755479 /* TSCBulletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B7F532004644900755479 /* TSCBulletView.m */; };
+		108B7F5B2004B0A000755479 /* TSCBulletManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 108B7F5A2004B0A000755479 /* TSCBulletManager.m */; };
 		109073CE1FFCE7D6007A7A34 /* TSCChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 109073CD1FFCE7D6007A7A34 /* TSCChatModel.m */; };
 		109A07741FC705FC00F7436B /* TSCLive.m in Sources */ = {isa = PBXBuildFile; fileRef = 109A07731FC705FC00F7436B /* TSCLive.m */; };
 		109A07771FC7067600F7436B /* TSCCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 109A07761FC7067600F7436B /* TSCCreator.m */; };
@@ -123,6 +125,7 @@
 		10E2C9272000998300CB837C /* MJExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E2C92D2000998300CB837C /* MJExtension.framework */; };
 		10E2C9282000998300CB837C /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E2C92E2000998300CB837C /* SDWebImage.framework */; };
 		10E2C92A2000998300CB837C /* YYKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E2C9302000998300CB837C /* YYKit.framework */; };
+		10F6C7352009B52D00041287 /* TSCSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F6C7342009B52D00041287 /* TSCSwitch.m */; };
 		10F916AB1FC8552B00EE3947 /* TSCCards.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F916AA1FC8552B00EE3947 /* TSCCards.m */; };
 		10F916AE1FC8558600EE3947 /* TSCCover.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F916AD1FC8558600EE3947 /* TSCCover.m */; };
 		10F916B11FC855EC00EE3947 /* TSCData.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F916B01FC855EC00EE3947 /* TSCData.m */; };
@@ -211,6 +214,10 @@
 		108A26291FAF4A470028F84C /* TSCNearViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCNearViewController.h; sourceTree = "<group>"; };
 		108A262A1FAF4A470028F84C /* TSCNearViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCNearViewController.m; sourceTree = "<group>"; };
 		108A262B1FAF4A470028F84C /* TSCNearViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TSCNearViewController.xib; sourceTree = "<group>"; };
+		108B7F522004644900755479 /* TSCBulletView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCBulletView.h; sourceTree = "<group>"; };
+		108B7F532004644900755479 /* TSCBulletView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCBulletView.m; sourceTree = "<group>"; };
+		108B7F592004B0A000755479 /* TSCBulletManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCBulletManager.h; sourceTree = "<group>"; };
+		108B7F5A2004B0A000755479 /* TSCBulletManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCBulletManager.m; sourceTree = "<group>"; };
 		109073CC1FFCE7D6007A7A34 /* TSCChatModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCChatModel.h; sourceTree = "<group>"; };
 		109073CD1FFCE7D6007A7A34 /* TSCChatModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCChatModel.m; sourceTree = "<group>"; };
 		109A07721FC705FC00F7436B /* TSCLive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCLive.h; sourceTree = "<group>"; };
@@ -329,6 +336,8 @@
 		10E2C92E2000998300CB837C /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E2C92F2000998300CB837C /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E2C9302000998300CB837C /* YYKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = YYKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10F6C7332009B52D00041287 /* TSCSwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCSwitch.h; sourceTree = "<group>"; };
+		10F6C7342009B52D00041287 /* TSCSwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCSwitch.m; sourceTree = "<group>"; };
 		10F916A91FC8552B00EE3947 /* TSCCards.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCCards.h; sourceTree = "<group>"; };
 		10F916AA1FC8552B00EE3947 /* TSCCards.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSCCards.m; sourceTree = "<group>"; };
 		10F916AC1FC8558600EE3947 /* TSCCover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSCCover.h; sourceTree = "<group>"; };
@@ -505,11 +514,24 @@
 			path = login;
 			sourceTree = "<group>";
 		};
-		109073C71FFCAF60007A7A34 /* Components */ = {
+		108B7F572004B01E00755479 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				10F6C7362009B53D00041287 /* Switch */,
+				108B7F582004B04A00755479 /* Bullet */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		108B7F582004B04A00755479 /* Bullet */ = {
+			isa = PBXGroup;
+			children = (
+				108B7F522004644900755479 /* TSCBulletView.h */,
+				108B7F532004644900755479 /* TSCBulletView.m */,
+				108B7F592004B0A000755479 /* TSCBulletManager.h */,
+				108B7F5A2004B0A000755479 /* TSCBulletManager.m */,
+			);
+			path = Bullet;
 			sourceTree = "<group>";
 		};
 		109073CB1FFCE79A007A7A34 /* playChat */ = {
@@ -608,6 +630,7 @@
 		10BB443C1F9AF93C00068AF2 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				108B7F572004B01E00755479 /* Components */,
 				10BB44451F9AF9D400068AF2 /* NetWork */,
 				10E19A471FE27331000F0D32 /* Common */,
 				10BB44441F9AF9CA00068AF2 /* Show */,
@@ -664,7 +687,6 @@
 		10BB443F1F9AF99A00068AF2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				109073C71FFCAF60007A7A34 /* Components */,
 				106B6F131FD26F55006A1E66 /* Tools */,
 				106B6F121FD26F46006A1E66 /* Category */,
 			);
@@ -947,6 +969,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		10F6C7362009B53D00041287 /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				10F6C7332009B52D00041287 /* TSCSwitch.h */,
+				10F6C7342009B52D00041287 /* TSCSwitch.m */,
+			);
+			name = Switch;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		EFE45F4F99618CB0A7F3CD83 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1136,6 +1168,7 @@
 				109A8CAB1FE4FF5500D3A704 /* TSCHotSpecialCard.m in Sources */,
 				108009991FB74C840087642C /* TSCHttpTool.m in Sources */,
 				109A8CB81FE5033A00D3A704 /* TSCLiveSwiperChannel.m in Sources */,
+				108B7F542004644900755479 /* TSCBulletView.m in Sources */,
 				109A8CA81FE4FF0400D3A704 /* TSCHotSpecialData.m in Sources */,
 				109A077D1FC7076000F7436B /* TSCActInfo.m in Sources */,
 				10AA6D021FD79627004244B8 /* TSCRefreshHeader.m in Sources */,
@@ -1144,6 +1177,7 @@
 				109A8CD71FE62B3500D3A704 /* TSCHotBannerCell.m in Sources */,
 				1015F9551FDE271B003F5286 /* TSCLevelInfo.m in Sources */,
 				1003E2A31FD2C091005995F2 /* TSCNearLiveCell.m in Sources */,
+				10F6C7352009B52D00041287 /* TSCSwitch.m in Sources */,
 				106B6F1E1FD2AE52006A1E66 /* TSCFlow.m in Sources */,
 				101B10BB1FE69D7100C010DB /* TSCBannerImageCell.m in Sources */,
 				10BB44551F9AFFE900068AF2 /* ViewController.m in Sources */,
@@ -1174,6 +1208,7 @@
 				104F22381FCDAB59005BC4BD /* TSCLiveChatViewController.m in Sources */,
 				109A077A1FC706F000F7436B /* TSCExtra.m in Sources */,
 				10BCAC541F9CE0B800BA589E /* TSCBaseViewController.m in Sources */,
+				108B7F5B2004B0A000755479 /* TSCBulletManager.m in Sources */,
 				10B717EA1FD81F380047A78A /* TSCGiftViewController.m in Sources */,
 				109A8CC11FE504DB00D3A704 /* TSCLiveSwiperChannelResource.m in Sources */,
 				10E19A441FE26B91000F0D32 /* TSCAdvertisingRecord.m in Sources */,

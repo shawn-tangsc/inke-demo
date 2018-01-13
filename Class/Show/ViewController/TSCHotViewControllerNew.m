@@ -23,8 +23,20 @@ static NSString * gameId = @"TSCHotGame";
 static NSString * swiperLiveId = @"TSCHotSwiperLive";
 static NSString * bannerId = @"TSCHotBannerLive";
 
-
+/*
+    当我们想声明的属性不想公开的时候，我们就可以在.m文件中写一个
+    @interface 类名 ()
+    @end
+    他和.h里面的内容有点像，其实这是一个特殊的匿名Category，扩展（extension）。
+    类别（Category）是一种为现有的类添加新方法的方式。
+    而 extension 可以添加新的实例变量
+    https://www.jianshu.com/p/25e38349f51c
+ */
 @interface TSCHotViewControllerNew ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+
+/*
+    @property 是以 @ 开头，所以它也是 Objective—C 编译器指令，用于声明属性，并为它自动创建一个带下划线的实例变量，及实例变量的 setter 和 getter 方法。
+ */
 @property (weak, nonatomic) IBOutlet UICollectionView *hotCollectionView;
 @property (nonatomic,strong) NSMutableArray *datalist;
 @end

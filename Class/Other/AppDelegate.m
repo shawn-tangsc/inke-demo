@@ -32,7 +32,7 @@
     }
     [self setupUmeng];
     UIViewController * mainVC ;
-    
+// 这里可以区分是否一定要进入login页面，我这里就偷个懒不做的那么细了，每次进入默认会进入
 //     mainVC = [[TSCTabBarViewController alloc]init];
     mainVC = [[TSCLoginViewController alloc]init];
     

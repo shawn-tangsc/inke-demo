@@ -8,10 +8,13 @@
 
 #import "TSCBaseViewController.h"
 #import "TSCLive.h"
+#import "TSCBulletManager.h"
 @interface TSCLiveChatViewController : TSCBaseViewController
+
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 @property (nonatomic,strong) TSCLive * live;
 @property (nonatomic, strong) SocketIOClient *client;
+@property (nonatomic,retain) TSCBulletManager *bulletManager;
 
 -(void) closeGiftView;
 @end

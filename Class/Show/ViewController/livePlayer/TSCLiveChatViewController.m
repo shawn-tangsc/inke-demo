@@ -13,6 +13,8 @@
 #import "TSCChatViewCell.h"
 #import "TSCSystemMsgCell.h"
 #import "TSCChatModel.h"
+#import "TSCBulletView.h"
+#import "TSCSwitch.h"
 //#import >
 static NSString * chatCellId = @"TSCChatViewId";
 static NSString * chatSystemMsgId = @"TSCSystemMsgId";
@@ -46,10 +48,9 @@ static NSString * chatSystemMsgId = @"TSCSystemMsgId";
 @property (nonatomic, strong) TSCGiftViewController *giftView;
 @property (nonatomic, strong) TSCPlayerViewController *playerVC;
 @property (nonatomic, strong) NSMutableArray<TSCChatModel*> *chatList;//初始化！！初始化！！
-@property (nonatomic, strong) NSDictionary *plistData;
-
-//@property (nonatomic, strong) A
-
+@property (nonatomic, strong) NSDictionary *plistData;//读取plist文件里面的数据
+@property (nonatomic, strong) TSCSwitch *bulletSwitch;
+@property (nonatomic, assign) BOOL isOnBullet;
 @end
 
 @implementation TSCLiveChatViewController
@@ -74,7 +75,7 @@ static NSString * chatSystemMsgId = @"TSCSystemMsgId";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
 //    [self.chatTableView endEditing:YES];
     [self.chatTableView registerNib:[UINib nibWithNibName:@"TSCChatViewCell" bundle:nil] forCellReuseIdentifier:chatCellId];
-     [self.chatTableView registerNib:[UINib nibWithNibName:@"TSCSystemMsgCell" bundle:nil] forCellReuseIdentifier:chatSystemMsgId];
+    [self.chatTableView registerNib:[UINib nibWithNibName:@"TSCSystemMsgCell" bundle:nil] forCellReuseIdentifier:chatSystemMsgId];
 //    [self.chatTableView reloadData];
 //    [self.chatTableView setContentOffset:CGPointMake(0, MAX(0, self.chatTableView.contentSize.height - self.chatTableView.height)) animated:YES];
 }
@@ -86,12 +87,17 @@ static NSString * chatSystemMsgId = @"TSCSystemMsgId";
     [self.view addSubview:self.name];
     [self.view addSubview:self.onlineUsers];
     [self.view addSubview:self.creatorId];
+    
+    /**
+     这里注意了，可以直接从xib这里拖出方法来
+     */
     [self.shareBtn addTarget:self action:@selector(share) forControlEvents:UIControlEventTouchUpInside];
     [self.giftBtn addTarget:self action:@selector(gift) forControlEvents:UIControlEventTouchUpInside];
     [self.messageBtn addTarget:self action:@selector(message) forControlEvents:UIControlEventTouchUpInside];
     [self.chatBtn addTarget:self action:@selector(chat) forControlEvents:UIControlEventTouchUpInside];
     [self addChildVC];
     [self socketConnect];
+    [self initBulletSwitch];
 }
 
 /**
@@ -110,6 +116,32 @@ static NSString * chatSystemMsgId = @"TSCSystemMsgId";
 }
 
 #pragma mark-private function ---------------------------------------------------------------
+
+-(void)initBulletSwitch{
+    [self.chatToolView addSubview:self.bulletSwitch];
+    
+    [self.bulletSwitch switchWillStartSwicth:^(BOOL isOn) {
+        NSLog(@"swithWillStartSwith:%zd",isOn);
+    }];
+    
+    [self.bulletSwitch switchDidEndSwitch:^(BOOL isOn) {
+        NSLog(@"swithDidEndSwith:%zd",isOn);
+        self.isOnBullet = isOn;
+        if(isOn){
+            NSMutableArray *chat = @[].mutableCopy;
+            for (TSCChatModel *chatM in self.chatList) {
+                [chat addObject:chatM.context];
+            }
+            self.bulletManager.datasource = chat;
+            [self.bulletManager start];
+        } else {
+            self.bulletManager.datasource = @[].mutableCopy;
+            [self.bulletManager end];
+        }
+    }];
+
+}
+
 /**
  发送聊天数据
  */
@@ -131,7 +163,9 @@ static NSString * chatSystemMsgId = @"TSCSystemMsgId";
             
             [self.client emit:@"chat message" with:@[dict]];
         }
-       
+        if(self.isOnBullet){
+             [self.bulletManager refresh:self.textField.text];
+        }
     }else{
         NSLog(@"发送的是空数据");
     }
@@ -151,9 +185,11 @@ static NSString * chatSystemMsgId = @"TSCSystemMsgId";
     [self.chatTableView reloadData];
     //http://stackoverflow.com/questions/8640409/how-to-keep-uitableview-contentoffset-after-calling-reloaddata
     //tableView reloadData 后无法setContentOffset的问题 ，需要加上 [self.chatTableView layoutIfNeeded]
+    //和setNeedsLayout区别：setNeedsLayout是标记这个view需要重新layout，GPU在下次界面渲染的时候会判断这个标记位，layoutIfNeed是不用等到下次渲染，立刻就冲重新layout，所以一般的使用方法是 先 setNeedsLayout，然后再layoutIfNeed，界面就会立刻更新了
     [self.chatTableView layoutIfNeeded];
     [_chatTableView setContentOffset:CGPointMake(0, MAX(0, _chatTableView.contentSize.height - _chatTableView.height)) animated:YES];
-
+    
+    
 }
 
 /**
@@ -222,12 +258,15 @@ static NSString * chatSystemMsgId = @"TSCSystemMsgId";
     NSLog(@"头像被点击了");
 }
 -(void) message{
+    
     NSLog(@"信息");
-    [self.view showAlert:@"信息还没做"];
+//    [self.view showAlert:@"信息还没做"];
+   
 }
 
 -(void)chat{
     NSLog(@"聊天");
+    //这里会触发键盘事件
     [self.textField becomeFirstResponder];
 }
 //关闭礼物界面
@@ -260,7 +299,6 @@ static NSString * chatSystemMsgId = @"TSCSystemMsgId";
  @param notification 发生变化时，消息广播会把当前的这个notification当作参数穿进来
  */
 -(void)keyboardWillChange:(NSNotification *)notification{
-    NSLog(@"notifi");
     //如果不是在编辑状态，则什么都不发生
     if(!self.textField.isEditing) return;
     //每个notification对象都有一个变量叫userInfo，他是一个NSDictionary对象，用来存放用户希望随着notification一起传到observer的其他信息。
@@ -271,8 +309,6 @@ static NSString * chatSystemMsgId = @"TSCSystemMsgId";
     CGFloat duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] integerValue];//时间
     UIViewAnimationCurve curve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
     _chatViewBottomConstraints.constant = beginFrame.origin.y < endFrame.origin.y ? 0: endFrame.size.height-43;//43是iphonex的地步安全区域
-    NSLog(@"%lu",curve<<16);
-    NSLog(@"%lu",curve<<16|UIViewAnimationOptionBeginFromCurrentState);
     self.chatToolView.alpha = 1;
     //动画详解可以参考http://www.360doc.com/content/16/0328/10/32029808_545820501.shtml
     [UIView animateWithDuration:duration delay:0.0f options:(curve<<16|UIViewAnimationOptionBeginFromCurrentState) animations:^{
@@ -323,27 +359,26 @@ static NSString * chatSystemMsgId = @"TSCSystemMsgId";
     } completion:^(BOOL finished) {
         [imageView removeFromSuperview];
     }];
+    NSDictionary *dict = @{@"userName":@"shaw-tang",
+                           @"context":@"点了一个赞！",
+                           @"userLevel":@11, //在数字前加上@可以直接将数字转换成nsnumber对象
+                           @"type":@2
+                           };
     //不连接socket服务器也可以看效果
     if(self.client.status != SocketIOClientStatusConnected){
-        NSDictionary *dict = @{@"userName":@"shaw-tang",
-                               @"context":@"点了一个赞！",
-                               @"userLevel":@11, //在数字前加上@可以直接将数字转换成nsnumber对象
-                               @"type":@2
-                               };
         [self reloadChatTableWithData:dict];
     }else{
-        NSDictionary *dict = @{@"user":@"shaw-tang",
-                               @"msg":@"点了一个赞！",
-                               @"userLevel":@11 ,//在数字前加上@可以直接将数字转换成nsstring对象
-                               @"type": @2
-                               };
-        
         [self.client emit:@"chat message" with:@[dict]];
     }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)addBulletView:(TSCBulletView *)view{
+    view.frame = CGRectMake(SCREEN_WIDTH, 250+view.trajectory *40, CGRectGetWidth(view.bounds), CGRectGetHeight(view.bounds));
+    [self.view addSubview:view];
+    [view startAnimation];
 }
 
 /**
@@ -421,20 +456,27 @@ static NSString * chatSystemMsgId = @"TSCSystemMsgId";
 
 #pragma mark-touch event listen ---------------------------------------------------------------
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    //判断现在是否是键盘弹出的状态
-    if (self.textField.isEditing){
-        [self.textField resignFirstResponder];//取消键盘事件
-        self.chatToolView.alpha = 0;
-        return;
-    }
     NSLog(@"触摸事件开始");
     UITouch *touch = [touches anyObject];
     self.gestureStartPoint = [touch locationInView:self.view];
+    if (self.textField.isEditing){
+        return;
+    }
     [super touchesBegan:touches withEvent:event];
 }
 
 - (void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     NSLog(@"触摸事件移动");
+    //判断现在是否是键盘弹出的状态
+    if (self.textField.isEditing){
+        //        CGPoint point = [self.chatToolView.layer convertPoint:self.gestureStartPoint toLayer:self.view.layer];
+        CGPoint point = [self.chatToolView convertPoint: self.gestureStartPoint fromView:self.view];
+        if(![self.chatToolView.layer containsPoint:point]){
+            [self.textField resignFirstResponder];//取消键盘事件
+            self.chatToolView.alpha = 0;
+        }
+        return;
+    }
     UITouch *touch = [touches anyObject];
     CGPoint endPoint = [touch locationInView:self.view];
     if(fabs(self.gestureStartPoint.x-endPoint.x)<5&&fabs(self.gestureStartPoint.y-endPoint.y)<5 ){
@@ -595,6 +637,33 @@ static NSString * chatSystemMsgId = @"TSCSystemMsgId";
     }
     return _plistData;
 }
+
+-(TSCBulletManager *)bulletManager{
+    if(!_bulletManager){
+        _bulletManager = [[TSCBulletManager alloc] init];
+        @weakify(self);
+        _bulletManager.generateViewblock = ^(TSCBulletView *view) {
+            @strongify(self);
+            [self addBulletView:view];
+        };
+    }
+    return _bulletManager;
+}
+
+-(TSCSwitch *)bulletSwitch{
+    if(!_bulletSwitch){
+        _bulletSwitch = [[TSCSwitch alloc] initWithFrame:CGRectMake(5,8,55,20)];
+//         _bulletSwitch = [[TSCSwitch alloc] init];
+        
+        _bulletSwitch.tintColor = [UIColor colorWithRed:220.0/255.0 green:220.0/255.0 blue:220.0/255.0 alpha:1];
+        //27 210 189
+        _bulletSwitch.onTintColor = [UIColor colorWithRed:27.0/255.0 green:210.0/255.0 blue:189.0/255.0 alpha:1];
+        _bulletSwitch.thumbTintColor = [UIColor whiteColor];
+        _bulletSwitch.tumbText = @"弹";
+    }
+    return _bulletSwitch;
+}
+
 /*
 #pragma mark - Navigation
 

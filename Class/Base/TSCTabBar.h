@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, TSCItemType) {
 @class TSCTabBar;
 
 typedef void(^TabBlock)(TSCTabBar * tabbar,TSCItemType idx);
-
+//这里有个比较有意思的http://blog.csdn.net/mccand1234/article/details/52278616
 @protocol TSCTabbarDelegate <NSObject>
 
 - (void) tabbar:(TSCTabBar *)tabbar clickButton:(TSCItemType) idx;
