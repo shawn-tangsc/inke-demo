@@ -148,7 +148,7 @@ func setConnected(_ value: Bool) {
 <!--<img src="/gif/login-page.gif"  width="310" />-->
 ![login-page.gif](https://github.com/shawn-tangsc/inke-demo/blob/master/gif/login-page.gif)
 ![main-page.gif](https://github.com/shawn-tangsc/inke-demo/blob/master/gif/main-page.gif)
-![live-page.gif](https://github.com/shawn-tangsc/inke-demo/blob/master/gif/live-page.gif)
+![live-page.gif](https://github.com/shawn-tangsc/inke-demo/blob/master/gif/live-page1.gif)
 
 
 
